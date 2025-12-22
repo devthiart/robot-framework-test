@@ -12,4 +12,6 @@ Fill in the form fields.
 	Click Element    class:lista-suspensa
 	Click Element    //option[contains(.,'Programação')]
 	Sleep    5s
-	
+	Click Element    id:form-botao
+	Element Should Be Visible    class:colaborador
+	Sleep    5s
