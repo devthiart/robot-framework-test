@@ -38,6 +38,3 @@ And I click the 'Criar Card' button
 
 Then I should see the card in expected team
     Element Should Be Visible    class:colaborador
-
-
-
