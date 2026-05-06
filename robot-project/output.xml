@@ -1,36 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-06T15:53:36.683253" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-06T16:37:15.818352" rpa="false" schemaversion="5">
 <suite id="s1" name="Incorrect Input" source="D:\Documentos\programmer\courses\robot-framework\robot-project\incorrect_input.robot">
-<test id="s1-t1" name="Submit empty form" line="11">
+<test id="s1-t1" name="Verify alert when required field is empt" line="11">
 <kw name="Given I access the Organo website" owner="setup_teardown" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-06T15:53:36.933534" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
+<msg time="2026-05-06T16:37:17.407853" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
 <arg>url=http://localhost:3000</arg>
 <arg>browser=Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-06T15:53:36.933339" elapsed="1.841906"/>
+<status status="PASS" start="2026-05-06T16:37:17.407613" elapsed="2.267821"/>
 </kw>
-<status status="PASS" start="2026-05-06T15:53:36.933071" elapsed="1.842401"/>
+<status status="PASS" start="2026-05-06T16:37:17.406966" elapsed="2.269479"/>
 </kw>
-<kw name="Given I click the 'Criar Card' button">
+<kw name="Given I leave a required field empty and click the 'Criar Card' button">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-06T15:53:38.777209" level="INFO">Clicking element 'id:form-botao'.</msg>
+<msg time="2026-05-06T16:37:19.678027" level="INFO">Clicking element 'id:form-botao'.</msg>
 <arg>${SUBMIT_CARD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-06T15:53:38.776553" elapsed="0.082523"/>
+<status status="PASS" start="2026-05-06T16:37:19.677580" elapsed="0.098530"/>
 </kw>
-<status status="PASS" start="2026-05-06T15:53:38.776029" elapsed="0.083202"/>
+<status status="PASS" start="2026-05-06T16:37:19.677188" elapsed="0.099194"/>
+</kw>
+<kw name="Then I should see the required field error message">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-06T16:37:19.802685" level="INFO">Element 'id:form-nome-erro' is displayed.</msg>
+<arg>id:form-nome-erro</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-06T16:37:19.777746" elapsed="0.025104"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-06T16:37:19.822235" level="INFO">Element 'id:form-cargo-erro' is displayed.</msg>
+<arg>id:form-cargo-erro</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-06T16:37:19.803139" elapsed="0.019328"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-06T16:37:19.842719" level="INFO">Element 'id:form-times-erro' is displayed.</msg>
+<arg>id:form-times-erro</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-06T16:37:19.822641" elapsed="0.020178"/>
+</kw>
+<status status="PASS" start="2026-05-06T16:37:19.777166" elapsed="0.065764"/>
 </kw>
 <kw name="End test case" owner="setup_teardown" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-05-06T15:53:38.859874" elapsed="2.146933"/>
+<status status="PASS" start="2026-05-06T16:37:19.843783" elapsed="2.186652"/>
 </kw>
-<status status="PASS" start="2026-05-06T15:53:38.859607" elapsed="2.147384"/>
+<status status="PASS" start="2026-05-06T16:37:19.843481" elapsed="2.187069"/>
 </kw>
-<status status="PASS" start="2026-05-06T15:53:36.932034" elapsed="4.075374"/>
+<status status="PASS" start="2026-05-06T16:37:17.405690" elapsed="4.625160"/>
 </test>
-<status status="PASS" start="2026-05-06T15:53:36.685330" elapsed="4.323291"/>
+<status status="PASS" start="2026-05-06T16:37:15.820420" elapsed="6.211492"/>
 </suite>
 <statistics>
 <total>
