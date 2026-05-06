@@ -1,5 +1,8 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library          SeleniumLibrary
+Resource         ./setup_teardown.robot
+Test Setup       Given I access the Organo website
+Test Teardown    End test case
 
 *** Variables ***
 

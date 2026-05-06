@@ -1,74 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-06T11:20:14.077433" rpa="false" schemaversion="5">
-<suite id="s1" name="Correct Input" source="D:\Documentos\programmer\courses\robot-framework\robot-project\correct_input.robot">
-<test id="s1-t1" name="Verify that when the form is filled out correctly, the data is entered correctly into the list and that a new card is created in the expected time." line="19">
-<kw name="Given I access the Organo website">
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-06T15:53:36.683253" rpa="false" schemaversion="5">
+<suite id="s1" name="Incorrect Input" source="D:\Documentos\programmer\courses\robot-framework\robot-project\incorrect_input.robot">
+<test id="s1-t1" name="Submit empty form" line="11">
+<kw name="Given I access the Organo website" owner="setup_teardown" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-06T11:20:14.327913" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
+<msg time="2026-05-06T15:53:36.933534" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
 <arg>url=http://localhost:3000</arg>
 <arg>browser=Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-06T11:20:14.327376" elapsed="1.758384"/>
+<status status="PASS" start="2026-05-06T15:53:36.933339" elapsed="1.841906"/>
 </kw>
-<status status="PASS" start="2026-05-06T11:20:14.326251" elapsed="1.759717"/>
+<status status="PASS" start="2026-05-06T15:53:36.933071" elapsed="1.842401"/>
 </kw>
-<kw name="And I fill in the form fields">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-06T11:20:16.087393" level="INFO">Typing text 'Thiago' into text field 'id:form-nome'.</msg>
-<arg>${FIELD_NOME}</arg>
-<arg>Thiago</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-06T11:20:16.086945" elapsed="0.155506"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-06T11:20:16.243019" level="INFO">Typing text 'Developer' into text field 'id:form-cargo'.</msg>
-<arg>${FIELD_CARGO}</arg>
-<arg>Developer</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-06T11:20:16.242703" elapsed="0.091973"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-06T11:20:16.335109" level="INFO">Typing text 'https://www.devthiart.com/images/thiago-andre.jpg' into text field 'id:form-imagem'.</msg>
-<arg>${FIELD_IMAGEM}</arg>
-<arg>https://www.devthiart.com/images/thiago-andre.jpg</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-06T11:20:16.334852" elapsed="0.119296"/>
-</kw>
+<kw name="Given I click the 'Criar Card' button">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-06T11:20:16.454603" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
-<arg>${FIELD_TIME}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-06T11:20:16.454343" elapsed="0.075476"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-06T11:20:16.530371" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
-<arg>${PROGRAMACAO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-06T11:20:16.530043" elapsed="0.035806"/>
-</kw>
-<status status="PASS" start="2026-05-06T11:20:16.086597" elapsed="0.479368"/>
-</kw>
-<kw name="And I click the 'Criar Card' button">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-06T11:20:16.566743" level="INFO">Clicking element 'id:form-botao'.</msg>
+<msg time="2026-05-06T15:53:38.777209" level="INFO">Clicking element 'id:form-botao'.</msg>
 <arg>${SUBMIT_CARD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-06T11:20:16.566554" elapsed="0.110738"/>
+<status status="PASS" start="2026-05-06T15:53:38.776553" elapsed="0.082523"/>
 </kw>
-<status status="PASS" start="2026-05-06T11:20:16.566323" elapsed="0.111069"/>
+<status status="PASS" start="2026-05-06T15:53:38.776029" elapsed="0.083202"/>
 </kw>
-<kw name="Then I should see the card in expected team">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-05-06T11:20:16.700907" level="INFO">Element 'class:colaborador' is displayed.</msg>
-<arg>class:colaborador</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-06T11:20:16.678255" elapsed="0.022736"/>
+<kw name="End test case" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-06T15:53:38.859874" elapsed="2.146933"/>
 </kw>
-<status status="PASS" start="2026-05-06T11:20:16.677935" elapsed="0.023150"/>
+<status status="PASS" start="2026-05-06T15:53:38.859607" elapsed="2.147384"/>
 </kw>
-<status status="PASS" start="2026-05-06T11:20:14.325046" elapsed="2.376307"/>
+<status status="PASS" start="2026-05-06T15:53:36.932034" elapsed="4.075374"/>
 </test>
-<status status="PASS" start="2026-05-06T11:20:14.079907" elapsed="2.622084"/>
+<status status="PASS" start="2026-05-06T15:53:36.685330" elapsed="4.323291"/>
 </suite>
 <statistics>
 <total>
@@ -77,7 +39,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Correct Input" id="s1" pass="1" fail="0" skip="0">Correct Input</stat>
+<stat name="Incorrect Input" id="s1" pass="1" fail="0" skip="0">Incorrect Input</stat>
 </suite>
 </statistics>
 <errors>

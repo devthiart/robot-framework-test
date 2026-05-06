@@ -1,5 +1,8 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library          SeleniumLibrary
+Resource         ./setup_teardown.robot
+Test Setup       Given I access the Organo website
+Test Teardown    End test case
 
 *** Variables ***
 ${FIELD_NOME}      id:form-nome
@@ -17,16 +20,12 @@ ${INOVACAO}        //option[contains(.,'Inovação')]
 
 *** Test Cases ***
 Verify that when the form is filled out correctly, the data is entered correctly into the list and that a new card is created in the expected time.
-    Given I access the Organo website
-    And I fill in the form fields
+    Given I fill in the form fields
     And I click the 'Criar Card' button
     Then I should see the card in expected team
 
 *** Keywords ***
-Given I access the Organo website
-	  Open Browser    url=http://localhost:3000    browser=Chrome
-
-And I fill in the form fields
+Given I fill in the form fields
     Input Text	  ${FIELD_NOME}    Thiago
     Input Text    ${FIELD_CARGO}    Developer
     Input Text    ${FIELD_IMAGEM}    https://www.devthiart.com/images/thiago-andre.jpg
