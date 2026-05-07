@@ -11,13 +11,14 @@ ${FIELD_CARGO}     id:form-cargo
 ${FIELD_IMAGEM}    id:form-imagem
 ${FIELD_TIME}      class:lista-suspensa
 ${SUBMIT_CARD}     id:form-botao 
-${PROGRAMACAO}     //option[contains(.,'Programação')]
-${FRONT-END}       //option[contains(.,'Front-End')]
-${DADOS}           //option[contains(.,'Data Science')]
-${DEVOPS}          //option[contains(.,'Devops')]
-${UX}              //option[contains(.,'UX e Design')]
-${MOBILE}          //option[contains(.,'Mobile')]
-${INOVACAO}        //option[contains(.,'Inovação')]
+@{Select_times}
+...    //option[contains(.,'Programação')]
+...    //option[contains(.,'Front-End')]
+...    //option[contains(.,'Data Science')]
+...    //option[contains(.,'Devops')]
+...    //option[contains(.,'UX e Design')]
+...    //option[contains(.,'Mobile')]
+...    //option[contains(.,'Inovação')]
 
 *** Test Cases ***
 Verify that when the form is filled out correctly, the data is entered correctly into the list and that a new card is created in the expected time.
@@ -26,7 +27,13 @@ Verify that when the form is filled out correctly, the data is entered correctly
     Then I should see the card in expected team
 
 Verify if it is possible to create more than one card
+    Given I fill in the form fields
+    And I click the 'Criar Card' button
     Then three cards should be displayed in the expected team
+
+Verify if it is possible to create a card for each available team by filling in the form correctly
+    Given I fill in the form fields
+    Then create 1 card in each available team
 
 *** Keywords ***
 Given I fill in the form fields
@@ -37,7 +44,7 @@ Given I fill in the form fields
     ${Imagem}    FakerLibrary.Image Url
     Input Text    ${FIELD_IMAGEM}    ${Imagem}
     Click Element    ${FIELD_TIME}
-    Click Element    ${PROGRAMACAO}
+    Click Element    ${Select_times}[0]
 
 And I click the 'Criar Card' button
     Click Element    ${SUBMIT_CARD}
@@ -51,4 +58,12 @@ Then three cards should be displayed in the expected team
         And I click the 'Criar Card' button
     END
     Sleep    5s
-    
+
+Then create 1 card in each available team
+    FOR    ${index}    ${time}    IN ENUMERATE    @{Select_times}
+        Log    ${index}:${time}
+        Given I fill in the form fields
+        Click Element    ${time}
+        And I click the 'Criar Card' button
+    END
+    Sleep    10s
