@@ -24,6 +24,9 @@ Verify that when the form is filled out correctly, the data is entered correctly
     And I click the 'Criar Card' button
     Then I should see the card in expected team
 
+Verify if it is possible to create more than one card
+    Then three cards should be displayed in the expected team
+
 *** Keywords ***
 Given I fill in the form fields
     Input Text	  ${FIELD_NOME}    Thiago
@@ -37,3 +40,11 @@ And I click the 'Criar Card' button
 
 Then I should see the card in expected team
     Element Should Be Visible    class:colaborador
+
+Then three cards should be displayed in the expected team
+    FOR    ${i}    IN RANGE    1    3
+        Given I fill in the form fields
+        And I click the 'Criar Card' button
+    END
+    Sleep    5s
+    
