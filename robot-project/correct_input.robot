@@ -1,5 +1,6 @@
 *** Settings ***
 Library          SeleniumLibrary
+Library          FakerLibrary    locale=pt-BR
 Resource         ./setup_teardown.robot
 Test Setup       Given I access the Organo website
 Test Teardown    End test case
@@ -29,9 +30,12 @@ Verify if it is possible to create more than one card
 
 *** Keywords ***
 Given I fill in the form fields
-    Input Text	  ${FIELD_NOME}    Thiago
-    Input Text    ${FIELD_CARGO}    Developer
-    Input Text    ${FIELD_IMAGEM}    https://www.devthiart.com/images/thiago-andre.jpg
+    ${Nome}       FakerLibrary.First Name
+    Input Text	  ${FIELD_NOME}    ${Nome}
+    ${Cargo}      FakerLibrary.Job
+    Input Text    ${FIELD_CARGO}    ${Cargo}
+    ${Imagem}    FakerLibrary.Image Url
+    Input Text    ${FIELD_IMAGEM}    ${Imagem}
     Click Element    ${FIELD_TIME}
     Click Element    ${PROGRAMACAO}
 

@@ -1,68 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-06T16:37:15.818352" rpa="false" schemaversion="5">
-<suite id="s1" name="Incorrect Input" source="D:\Documentos\programmer\courses\robot-framework\robot-project\incorrect_input.robot">
-<test id="s1-t1" name="Verify alert when required field is empt" line="11">
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-07T15:07:49.890706" rpa="false" schemaversion="5">
+<suite id="s1" name="Correct Input" source="D:\Documentos\programmer\courses\robot-framework\robot-project\correct_input.robot">
+<test id="s1-t1" name="Verify that when the form is filled out correctly, the data is entered correctly into the list and that a new card is created in the expected time." line="23">
 <kw name="Given I access the Organo website" owner="setup_teardown" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-06T16:37:17.407853" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
+<msg time="2026-05-07T15:07:50.172156" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
 <arg>url=http://localhost:3000</arg>
 <arg>browser=Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-06T16:37:17.407613" elapsed="2.267821"/>
+<status status="PASS" start="2026-05-07T15:07:50.171951" elapsed="1.948373"/>
 </kw>
-<status status="PASS" start="2026-05-06T16:37:17.406966" elapsed="2.269479"/>
+<status status="PASS" start="2026-05-07T15:07:50.171675" elapsed="1.948893"/>
 </kw>
-<kw name="Given I leave a required field empty and click the 'Criar Card' button">
+<kw name="Given I fill in the form fields">
+<kw name="FakerLibrary.Name">
+<msg time="2026-05-07T15:07:52.122920" level="FAIL">No keyword with name 'FakerLibrary.Name' found.</msg>
+<var>${Nome}</var>
+<status status="FAIL" start="2026-05-07T15:07:52.122839" elapsed="0.000182">No keyword with name 'FakerLibrary.Name' found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIELD_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:52.123184" elapsed="0.000033"/>
+</kw>
+<kw name="FakerLibrary.Job">
+<var>${Cargo}</var>
+<status status="NOT RUN" start="2026-05-07T15:07:52.123397" elapsed="0.000030"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIELD_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:52.123541" elapsed="0.000085"/>
+</kw>
+<kw name="FakerLibrary.Image Url">
+<var>${Imagem}</var>
+<status status="NOT RUN" start="2026-05-07T15:07:52.123819" elapsed="0.000028"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIELD_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:52.123999" elapsed="0.000027"/>
+</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-06T16:37:19.678027" level="INFO">Clicking element 'id:form-botao'.</msg>
-<arg>${SUBMIT_CARD}</arg>
+<arg>${FIELD_TIME}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-06T16:37:19.677580" elapsed="0.098530"/>
+<status status="NOT RUN" start="2026-05-07T15:07:52.124145" elapsed="0.000047"/>
 </kw>
-<status status="PASS" start="2026-05-06T16:37:19.677188" elapsed="0.099194"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${PROGRAMACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:52.124283" elapsed="0.000043"/>
 </kw>
-<kw name="Then I should see the required field error message">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-05-06T16:37:19.802685" level="INFO">Element 'id:form-nome-erro' is displayed.</msg>
-<arg>id:form-nome-erro</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-06T16:37:19.777746" elapsed="0.025104"/>
+<status status="FAIL" start="2026-05-07T15:07:52.121149" elapsed="0.003339">No keyword with name 'FakerLibrary.Name' found.</status>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-05-06T16:37:19.822235" level="INFO">Element 'id:form-cargo-erro' is displayed.</msg>
-<arg>id:form-cargo-erro</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-06T16:37:19.803139" elapsed="0.019328"/>
+<kw name="And I click the 'Criar Card' button">
+<status status="NOT RUN" start="2026-05-07T15:07:52.125109" elapsed="0.000058"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-05-06T16:37:19.842719" level="INFO">Element 'id:form-times-erro' is displayed.</msg>
-<arg>id:form-times-erro</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-06T16:37:19.822641" elapsed="0.020178"/>
-</kw>
-<status status="PASS" start="2026-05-06T16:37:19.777166" elapsed="0.065764"/>
+<kw name="Then I should see the card in expected team">
+<status status="NOT RUN" start="2026-05-07T15:07:52.125659" elapsed="0.000101"/>
 </kw>
 <kw name="End test case" owner="setup_teardown" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-05-06T16:37:19.843783" elapsed="2.186652"/>
+<status status="PASS" start="2026-05-07T15:07:52.126756" elapsed="2.147807"/>
 </kw>
-<status status="PASS" start="2026-05-06T16:37:19.843481" elapsed="2.187069"/>
+<status status="PASS" start="2026-05-07T15:07:52.126420" elapsed="2.148246"/>
 </kw>
-<status status="PASS" start="2026-05-06T16:37:17.405690" elapsed="4.625160"/>
+<status status="FAIL" start="2026-05-07T15:07:50.170251" elapsed="4.104684">No keyword with name 'FakerLibrary.Name' found.</status>
 </test>
-<status status="PASS" start="2026-05-06T16:37:15.820420" elapsed="6.211492"/>
+<test id="s1-t2" name="Verify if it is possible to create more than one card" line="28">
+<kw name="Given I access the Organo website" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-07T15:07:54.277727" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
+<arg>url=http://localhost:3000</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-07T15:07:54.277491" elapsed="2.305261"/>
+</kw>
+<status status="PASS" start="2026-05-07T15:07:54.277177" elapsed="2.305740"/>
+</kw>
+<kw name="Then three cards should be displayed in the expected team">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Given I fill in the form fields">
+<kw name="FakerLibrary.Name">
+<msg time="2026-05-07T15:07:56.587107" level="FAIL">No keyword with name 'FakerLibrary.Name' found.</msg>
+<var>${Nome}</var>
+<status status="FAIL" start="2026-05-07T15:07:56.586982" elapsed="0.000266">No keyword with name 'FakerLibrary.Name' found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIELD_NOME}</arg>
+<arg>${Nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:56.587607" elapsed="0.000067"/>
+</kw>
+<kw name="FakerLibrary.Job">
+<var>${Cargo}</var>
+<status status="NOT RUN" start="2026-05-07T15:07:56.587941" elapsed="0.000076"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIELD_CARGO}</arg>
+<arg>${Cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:56.588133" elapsed="0.000056"/>
+</kw>
+<kw name="FakerLibrary.Image Url">
+<var>${Imagem}</var>
+<status status="NOT RUN" start="2026-05-07T15:07:56.588431" elapsed="0.000061"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIELD_IMAGEM}</arg>
+<arg>${Imagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:56.588650" elapsed="0.000047"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${FIELD_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:56.588830" elapsed="0.000061"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${PROGRAMACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:56.588996" elapsed="0.000025"/>
+</kw>
+<status status="FAIL" start="2026-05-07T15:07:56.584776" elapsed="0.004374">No keyword with name 'FakerLibrary.Name' found.</status>
+</kw>
+<kw name="And I click the 'Criar Card' button">
+<status status="NOT RUN" start="2026-05-07T15:07:56.589392" elapsed="0.000039"/>
+</kw>
+<var name="${i}">1</var>
+<status status="FAIL" start="2026-05-07T15:07:56.584350" elapsed="0.005138">No keyword with name 'FakerLibrary.Name' found.</status>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>3</value>
+<status status="FAIL" start="2026-05-07T15:07:56.584090" elapsed="0.005506">No keyword with name 'FakerLibrary.Name' found.</status>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-05-07T15:07:56.589746" elapsed="0.000049"/>
+</kw>
+<status status="FAIL" start="2026-05-07T15:07:56.583770" elapsed="0.006152">No keyword with name 'FakerLibrary.Name' found.</status>
+</kw>
+<kw name="End test case" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-07T15:07:56.590885" elapsed="2.146433"/>
+</kw>
+<status status="PASS" start="2026-05-07T15:07:56.590328" elapsed="2.147266"/>
+</kw>
+<status status="FAIL" start="2026-05-07T15:07:54.276480" elapsed="4.461476">No keyword with name 'FakerLibrary.Name' found.</status>
+</test>
+<status status="FAIL" start="2026-05-07T15:07:49.893255" elapsed="8.846061"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Incorrect Input" id="s1" pass="1" fail="0" skip="0">Incorrect Input</stat>
+<stat name="Correct Input" id="s1" pass="0" fail="2" skip="0">Correct Input</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-05-07T15:07:50.166327" level="ERROR">Error in file 'D:\Documentos\programmer\courses\robot-framework\robot-project\correct_input.robot' on line 3: Importing library 'FakerLibrary' failed: ModuleNotFoundError: No module named 'FakerLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\kamil\AppData\Local\Programs\Python\Python314\Scripts\robot.exe
+  C:\Users\kamil\AppData\Local\Programs\Python\Python314\python314.zip
+  C:\Users\kamil\AppData\Local\Programs\Python\Python314\DLLs
+  C:\Users\kamil\AppData\Local\Programs\Python\Python314\Lib
+  C:\Users\kamil\AppData\Local\Programs\Python\Python314
+  C:\Users\kamil\AppData\Local\Programs\Python\Python314\Lib\site-packages</msg>
 </errors>
 </robot>

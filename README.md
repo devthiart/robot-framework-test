@@ -17,6 +17,10 @@ pip install robotframework
 ```bash
 pip install --upgrade robotframework-seleniumlibrary
 ```
+- **Faker Library**
+```bash
+pip install robotframework-faker
+```
 
 ### 🔧 Installing
 
