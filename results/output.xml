@@ -1,78 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-09T11:45:13.894237" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-09T12:49:43.633628" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot-Framework" source="D:\Documentos\programmer\courses\robot-framework">
 <suite id="s1-s1" name="Robot-Project" source="D:\Documentos\programmer\courses\robot-framework\robot-project">
-<suite id="s1-s1-s1" name="If Example" source="D:\Documentos\programmer\courses\robot-framework\robot-project\if_example.robot">
-<test id="s1-s1-s1-t1" name="Exemplo blocos IF - ELSE IF" line="25">
-<kw name="Log To Console" owner="BuiltIn" type="SETUP">
-<arg>${\n}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-05-09T11:45:13.987562" elapsed="0.001078"/>
+<suite id="s1-s1-s1" name="Tests" source="D:\Documentos\programmer\courses\robot-framework\robot-project\tests">
+<suite id="s1-s1-s1-s1" name="Incorrect Input" source="D:\Documentos\programmer\courses\robot-framework\robot-project\tests\incorrect_input.robot">
+<test id="s1-s1-s1-s1-t1" name="Verify alert when required field is empt" line="10">
+<kw name="Given I access the Organo website" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-09T12:49:44.680783" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
+<arg>url=http://localhost:3000</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-09T12:49:44.680322" elapsed="1.916493"/>
 </kw>
-<if>
-<branch type="IF" condition="${NUMERO} &gt; 0">
-<kw name="Mostrar mensagem quando o número for maior que zero">
-<status status="NOT RUN" start="2026-05-09T11:45:13.989896" elapsed="0.000306"/>
+<status status="PASS" start="2026-05-09T12:49:44.679499" elapsed="1.917688"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<arg>message=Você está vendo essa mensagem porque o número [${NUMERO}] é maior que zero!!!</arg>
-<arg>console=True</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-05-09T11:45:13.990440" elapsed="0.000298"/>
+<kw name="Given I leave a required field empty and click the 'Criar Card' button" owner="registration">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-09T12:49:46.599120" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${SUBMIT_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-09T12:49:46.598463" elapsed="0.080732"/>
 </kw>
-<status status="NOT RUN" start="2026-05-09T11:45:13.989234" elapsed="0.001641"/>
-</branch>
-<branch type="ELSE IF" condition="${NUMERO} &lt; 0">
-<kw name="Mostrar mensagem quando o número for menor que zero">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-05-09T11:45:13.992750" level="INFO">O número [-1] é menor que zero!</msg>
-<arg>O número [${NUMERO}] é menor que zero!</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-09T11:45:13.992132" elapsed="0.001274"/>
+<status status="PASS" start="2026-05-09T12:49:46.597795" elapsed="0.081597"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>O número [${NUMERO}] é menor que zero!</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-05-09T11:45:13.993601" elapsed="0.000843"/>
+<kw name="Then I should see the required field error message" owner="registration">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-09T12:49:46.703493" level="INFO">Element 'id:form-nome-erro' is displayed.</msg>
+<arg>id:form-nome-erro</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-09T12:49:46.680420" elapsed="0.023918"/>
 </kw>
-<status status="PASS" start="2026-05-09T11:45:13.991596" elapsed="0.003055"/>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-09T12:49:46.735307" level="INFO">Element 'id:form-cargo-erro' is displayed.</msg>
+<arg>id:form-cargo-erro</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-09T12:49:46.704817" elapsed="0.030840"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-05-09T11:45:13.996102" level="INFO">Você está vendo essa mensagem porque o número [-1] é menor que zero!!!</msg>
-<arg>message=Você está vendo essa mensagem porque o número [${NUMERO}] é menor que zero!!!</arg>
-<arg>console=True</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-09T11:45:13.995040" elapsed="0.001611"/>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-09T12:49:46.758015" level="INFO">Element 'id:form-times-erro' is displayed.</msg>
+<arg>id:form-times-erro</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-09T12:49:46.735935" elapsed="0.022565"/>
 </kw>
-<status status="PASS" start="2026-05-09T11:45:13.990974" elapsed="0.005811"/>
-</branch>
-<branch type="ELSE IF" condition="${NUMERO} == 0">
-<kw name="Mostrar mensagem quando o número for igual a zero">
-<status status="NOT RUN" start="2026-05-09T11:45:13.997593" elapsed="0.000383"/>
+<status status="PASS" start="2026-05-09T12:49:46.679840" elapsed="0.078862"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<arg>message=Você está vendo essa mensagem porque o número [${NUMERO}] é igual a zero!!!</arg>
-<arg>console=True</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-05-09T11:45:13.998261" elapsed="0.000467"/>
+<kw name="End test case" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-09T12:49:46.759991" elapsed="2.185951"/>
 </kw>
-<status status="NOT RUN" start="2026-05-09T11:45:13.996900" elapsed="0.001988"/>
-</branch>
-<status status="PASS" start="2026-05-09T11:45:13.989189" elapsed="0.009785"/>
-</if>
-<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
-<arg>${\n}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-05-09T11:45:13.999659" elapsed="0.002002"/>
+<status status="PASS" start="2026-05-09T12:49:46.759316" elapsed="2.186953"/>
 </kw>
-<status status="PASS" start="2026-05-09T11:45:13.981407" elapsed="0.020739"/>
+<status status="PASS" start="2026-05-09T12:49:44.672044" elapsed="4.274728"/>
 </test>
-<doc>Examples of using IF in tests</doc>
-<status status="PASS" start="2026-05-09T11:45:13.972415" elapsed="0.037068"/>
+<status status="PASS" start="2026-05-09T12:49:43.705177" elapsed="5.248912"/>
 </suite>
-<status status="PASS" start="2026-05-09T11:45:13.957433" elapsed="0.060244"/>
+<status status="PASS" start="2026-05-09T12:49:43.690230" elapsed="5.270151"/>
 </suite>
-<status status="PASS" start="2026-05-09T11:45:13.901964" elapsed="0.119799"/>
+<status status="PASS" start="2026-05-09T12:49:43.685135" elapsed="5.281138"/>
+</suite>
+<status status="PASS" start="2026-05-09T12:49:43.642979" elapsed="5.340266"/>
 </suite>
 <statistics>
 <total>
@@ -83,7 +71,8 @@
 <suite>
 <stat name="Robot-Framework" id="s1" pass="1" fail="0" skip="0">Robot-Framework</stat>
 <stat name="Robot-Project" id="s1-s1" pass="1" fail="0" skip="0">Robot-Framework.Robot-Project</stat>
-<stat name="If Example" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot-Framework.Robot-Project.If Example</stat>
+<stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot-Framework.Robot-Project.Tests</stat>
+<stat name="Incorrect Input" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Robot-Framework.Robot-Project.Tests.Incorrect Input</stat>
 </suite>
 </statistics>
 <errors>

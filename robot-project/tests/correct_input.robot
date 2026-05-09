@@ -1,7 +1,5 @@
 *** Settings ***
-Library          SeleniumLibrary
-Library          FakerLibrary    locale=pt-BR
-Resource         ./setup_teardown.robot
+Resource    ../resource/main.robot
 Test Setup       Given I access the Organo website
 Test Teardown    End test case
 
@@ -19,5 +17,3 @@ Verify if it is possible to create more than one card
 Verify if it is possible to create a card for each available team by filling in the form correctly
     Given I fill in the form fields
     Then create 1 card in each available team
-
-
