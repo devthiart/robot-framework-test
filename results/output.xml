@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-07T17:08:20.438028" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-09T11:45:13.894237" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot-Framework" source="D:\Documentos\programmer\courses\robot-framework">
 <suite id="s1-s1" name="Robot-Project" source="D:\Documentos\programmer\courses\robot-framework\robot-project">
 <suite id="s1-s1-s1" name="If Example" source="D:\Documentos\programmer\courses\robot-framework\robot-project\if_example.robot">
@@ -7,72 +7,72 @@
 <kw name="Log To Console" owner="BuiltIn" type="SETUP">
 <arg>${\n}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-05-07T17:08:20.506351" elapsed="0.000770"/>
+<status status="PASS" start="2026-05-09T11:45:13.987562" elapsed="0.001078"/>
 </kw>
 <if>
 <branch type="IF" condition="${NUMERO} &gt; 0">
 <kw name="Mostrar mensagem quando o número for maior que zero">
-<status status="NOT RUN" start="2026-05-07T17:08:20.508012" elapsed="0.000306"/>
+<status status="NOT RUN" start="2026-05-09T11:45:13.989896" elapsed="0.000306"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>message=Você está vendo essa mensagem porque o número [${NUMERO}] é maior que zero!!!</arg>
 <arg>console=True</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-05-07T17:08:20.508526" elapsed="0.000303"/>
+<status status="NOT RUN" start="2026-05-09T11:45:13.990440" elapsed="0.000298"/>
 </kw>
-<status status="NOT RUN" start="2026-05-07T17:08:20.507430" elapsed="0.001497"/>
+<status status="NOT RUN" start="2026-05-09T11:45:13.989234" elapsed="0.001641"/>
 </branch>
 <branch type="ELSE IF" condition="${NUMERO} &lt; 0">
 <kw name="Mostrar mensagem quando o número for menor que zero">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-05-07T17:08:20.510448" level="INFO">O número [-1] é menor que zero!</msg>
+<msg time="2026-05-09T11:45:13.992750" level="INFO">O número [-1] é menor que zero!</msg>
 <arg>O número [${NUMERO}] é menor que zero!</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-07T17:08:20.509945" elapsed="0.000951"/>
+<status status="PASS" start="2026-05-09T11:45:13.992132" elapsed="0.001274"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>O número [${NUMERO}] é menor que zero!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-05-07T17:08:20.511039" elapsed="0.000621"/>
+<status status="PASS" start="2026-05-09T11:45:13.993601" elapsed="0.000843"/>
 </kw>
-<status status="PASS" start="2026-05-07T17:08:20.509507" elapsed="0.002296"/>
+<status status="PASS" start="2026-05-09T11:45:13.991596" elapsed="0.003055"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-05-07T17:08:20.512513" level="INFO">Você está vendo essa mensagem porque o número [-1] é menor que zero!!!</msg>
+<msg time="2026-05-09T11:45:13.996102" level="INFO">Você está vendo essa mensagem porque o número [-1] é menor que zero!!!</msg>
 <arg>message=Você está vendo essa mensagem porque o número [${NUMERO}] é menor que zero!!!</arg>
 <arg>console=True</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-07T17:08:20.511936" elapsed="0.001123"/>
+<status status="PASS" start="2026-05-09T11:45:13.995040" elapsed="0.001611"/>
 </kw>
-<status status="PASS" start="2026-05-07T17:08:20.508992" elapsed="0.004227"/>
+<status status="PASS" start="2026-05-09T11:45:13.990974" elapsed="0.005811"/>
 </branch>
 <branch type="ELSE IF" condition="${NUMERO} == 0">
 <kw name="Mostrar mensagem quando o número for igual a zero">
-<status status="NOT RUN" start="2026-05-07T17:08:20.513819" elapsed="0.000219"/>
+<status status="NOT RUN" start="2026-05-09T11:45:13.997593" elapsed="0.000383"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>message=Você está vendo essa mensagem porque o número [${NUMERO}] é igual a zero!!!</arg>
 <arg>console=True</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-05-07T17:08:20.514177" elapsed="0.000241"/>
+<status status="NOT RUN" start="2026-05-09T11:45:13.998261" elapsed="0.000467"/>
 </kw>
-<status status="NOT RUN" start="2026-05-07T17:08:20.513325" elapsed="0.001192"/>
+<status status="NOT RUN" start="2026-05-09T11:45:13.996900" elapsed="0.001988"/>
 </branch>
-<status status="PASS" start="2026-05-07T17:08:20.507378" elapsed="0.007185"/>
+<status status="PASS" start="2026-05-09T11:45:13.989189" elapsed="0.009785"/>
 </if>
 <kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
 <arg>${\n}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-05-07T17:08:20.514908" elapsed="0.000652"/>
+<status status="PASS" start="2026-05-09T11:45:13.999659" elapsed="0.002002"/>
 </kw>
-<status status="PASS" start="2026-05-07T17:08:20.502419" elapsed="0.013480"/>
+<status status="PASS" start="2026-05-09T11:45:13.981407" elapsed="0.020739"/>
 </test>
 <doc>Examples of using IF in tests</doc>
-<status status="PASS" start="2026-05-07T17:08:20.495776" elapsed="0.024076"/>
+<status status="PASS" start="2026-05-09T11:45:13.972415" elapsed="0.037068"/>
 </suite>
-<status status="PASS" start="2026-05-07T17:08:20.485969" elapsed="0.037533"/>
+<status status="PASS" start="2026-05-09T11:45:13.957433" elapsed="0.060244"/>
 </suite>
-<status status="PASS" start="2026-05-07T17:08:20.446615" elapsed="0.086049"/>
+<status status="PASS" start="2026-05-09T11:45:13.901964" elapsed="0.119799"/>
 </suite>
 <statistics>
 <total>
